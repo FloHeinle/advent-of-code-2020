@@ -1,0 +1,10 @@
+require: rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - vendor/bundle/**/*
+
+Style/Documentation:
+  Enabled: false
