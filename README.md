@@ -1,3 +1,4 @@
+![RSpec](https://github.com/FloHeinle/advent-of-code-2020/workflows/RSpec/badge.svg) ![Rubocop](https://github.com/FloHeinle/advent-of-code-2020/workflows/Rubocop/badge.svg)
 # Advent of Code 2020
 
 Just some dirty ruby scripts for Advent of Code 2020.
