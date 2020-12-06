@@ -18,9 +18,9 @@ class Setup < Thor
     lib_path = "lib/day#{num}"
 
     if Dir.exist?(lib_path) && !options[:f]
-     puts 'Directory already exists'
-     puts 'In case you want to override existing files use the "-f" option'
-     return
+      puts 'Directory already exists'
+      puts 'In case you want to override existing files use the "-f" option'
+      return
     end
 
     spec_path = "spec/lib/day#{num}"
