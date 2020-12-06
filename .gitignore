@@ -1,3 +1,6 @@
 identifier
 vendor/
 docs/index.html
+
+# allow to store input files in the repo folders
+inputdata
