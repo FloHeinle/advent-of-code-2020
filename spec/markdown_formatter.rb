@@ -17,7 +17,9 @@ class MarkdownFormatter
     text = notification.group.description.strip
     text.sub!(/^#/, '')
     text.tr!('_', ' ')
+    @output.puts if @group_level < 2
     @output.puts "#{current_indentation}#{text}"
+    @output.puts if @group_level < 2
     @groups += 1 if @group_level == 0
     @group_level += 1
   end
