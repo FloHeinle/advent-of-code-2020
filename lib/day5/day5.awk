@@ -1,7 +1,7 @@
 # par 1:
 # awk -f day5.awk <aoc inputfile> | grep 'part1'
 # part 2:
-# awk -f s.awk <aoc inputfile> | grep 'seatID=' | awk '{print $NF}' | sort -n | uniq | awk -f day5_part2.awk
+# awk -f day5.awk <aoc inputfile> | grep 'seatID=' | awk '{print $NF}' | sort -n | uniq | awk -f day5_part2.awk
 BEGIN {
   T = "\t";
   MAXSEATID = -1;

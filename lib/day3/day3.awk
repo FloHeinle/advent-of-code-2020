@@ -1,4 +1,4 @@
-# usage: awk -f day3.awk <aoc inputfile>
+# usage: gawk -f day3.awk <aoc inputfile>
 BEGIN {
   T = "\t";
   RIGHT[++slopes] = 1;DOWN[slopes] = 1;
@@ -21,8 +21,8 @@ END {
     p = p * solution;
   }
   PART_2_SOLUTION = p;
-  print( "part1 solution:" PART_1_SOLUTION);
-  print( "part2 solution:" PART_2_SOLUTION);
+  print(PART_1_SOLUTION);
+  print(PART_2_SOLUTION);
 
 }
 function calculate(right,down) {

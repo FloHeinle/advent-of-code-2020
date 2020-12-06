@@ -45,9 +45,9 @@ END {
     }
   }
   if( PART_1 ) {
-      print( "part1 solution:" SOLUTION);
+      print(SOLUTION);
   } else {
-      print( "part2 solution:" SOLUTION);
+      print(SOLUTION);
   }
 }
 
