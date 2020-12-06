@@ -42,6 +42,6 @@ END {
       }
     }
   }
-  print( "part1 solution:" totalYesAnswers);
-  print( "part2 solution:" totalcountGroupAgreements);
+  print(totalYesAnswers);
+  print(totalcountGroupAgreements);
 }

@@ -6,5 +6,8 @@ AllCops:
     - bin/*
     - vendor/bundle/**/*
 
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+
 Style/Documentation:
   Enabled: false

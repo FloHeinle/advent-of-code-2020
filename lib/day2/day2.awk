@@ -50,6 +50,6 @@ function check_part2() {
   return(r);
 }
 END {
-  print( "part1 solution:" PART_1_SOLUTION);
-  print( "part2 solution:" PART_2_SOLUTION);
+  print(PART_1_SOLUTION);
+  print(PART_2_SOLUTION);
 }
