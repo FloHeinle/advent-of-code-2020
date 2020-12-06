@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class Day3
+  FILE = 'lib/day3/test_input'
+
   class << self
-    def trees(step: 1, only_odd: false, file: 'lib/input')
+    def trees(step: 1, only_odd: false, file: FILE)
       @lines = get_lines(file)
       @position = 0
       @trees = 0
@@ -28,8 +30,8 @@ class Day3
       end
     end
 
-    def get_lines(_file = 'lib/input')
-      File.read('lib/day3/input').lines.map(&:strip)
+    def get_lines(file)
+      File.read(file).lines.map(&:strip)
     end
   end
 end

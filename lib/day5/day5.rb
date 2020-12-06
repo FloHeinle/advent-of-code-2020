@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 class Day5
+  FILE = 'lib/day5/test_input'
+
   class << self
-    def get_my_seat_id(file: 'lib/day5/input')
+    def part1(file: FILE)
+      all_seat_ids(file).last
+    end
+
+    def part2(file: FILE)
       seat_ids = all_seat_ids(file)
 
       seat_ids.each_with_index do |seat_id, index|
         higher_id = seat_ids[index + 1]
 
-        break unless higher_id
-
         return seat_id + 1 if (higher_id - seat_id) != 1
       end
-    end
-
-    def highest_seat_id(file: 'lib/day5/input')
-      all_seat_ids(file).last
     end
 
     private
@@ -58,7 +58,7 @@ class Day5
       row * 8 + column
     end
 
-    def get_lines(file = 'lib/day5/input')
+    def get_lines(file)
       File.read(file).lines.map(&:strip)
     end
   end

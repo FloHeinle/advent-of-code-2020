@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class Day6
+  FILE = 'lib/day6/test_input'
+
   class << self
-    def answers_summed(file: 'lib/day6/input')
+    def part1(file: FILE)
       answers = summed_answers_from(lines(file))
       answers.values.sum
     end
 
-    def all_answers_summed(file: 'lib/day6/input')
+    def part2(file: FILE)
       answers = all_summed_answers_from(lines(file))
 
       summed_answers = 0
@@ -46,7 +48,7 @@ class Day6
       end.transform_values(&:uniq).transform_values(&:size)
     end
 
-    def lines(file = 'lib/day6/input')
+    def lines(file)
       File.read(file).lines.map(&:strip)
     end
   end

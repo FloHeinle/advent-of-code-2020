@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 class Day4
+  FILE = 'lib/day4/test_input'
   KEYS = %w[byr iyr eyr hgt hcl ecl pid].freeze
 
   class << self
-    def valid_passports(validate_attrs: false, file: 'lib/day4/input')
+    def valid_passports(validate_attrs: false, file: FILE)
       lines = get_lines(file)
       passports = passports_from(lines)
       valid_passports = 0
@@ -22,7 +23,7 @@ class Day4
 
     private
 
-    def get_lines(file = 'lib/day4/ilnput')
+    def get_lines(file)
       File.read(file).lines.map(&:strip)
     end
 

@@ -14,25 +14,25 @@ RSpec.describe Day3 do
       a * b * c * d * e
     end
 
-    it 'Part 1: 230' do
-      expect(b).to eq(230)
+    it 'Part 1: 7' do
+      expect(b).to eq(7)
     end
 
-    it 'Part 2: 9533698720' do
-      expect(sum).to eq(9_533_698_720)
+    it 'Part 2: 336' do
+      expect(sum).to eq(336)
     end
   end
 
   context 'when AWK' do
     let(:path) { 'lib/day3' }
-    let(:awk) { `gawk -f #{path}/day3.awk #{path}/input`.strip.split(/\n/).map(&:to_i) }
+    let(:awk) { `gawk -f #{path}/day3.awk #{described_class::FILE}`.strip.split(/\n/).map(&:to_i) }
 
-    it 'Part 1: 230' do
-      expect(awk[0]).to eq(230)
+    it 'Part 1: 7' do
+      expect(awk[0]).to eq(7)
     end
 
-    it 'Part 2: 9533698720' do
-      expect(awk[1]).to eq(9_533_698_720)
+    it 'Part 2: 336' do
+      expect(awk[1]).to eq(336)
     end
   end
 end
