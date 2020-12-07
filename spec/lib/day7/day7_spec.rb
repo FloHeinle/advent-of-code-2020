@@ -17,12 +17,12 @@ RSpec.describe Day7 do
     let(:path) { 'lib/day7' }
     let(:awk) { `gawk -f #{path}/day7.awk #{described_class::FILE}`.strip.split(/\n/).map(&:to_i) }
 
-    it 'Part 1: INSERT_EXPECTATION_PART_1' do
-      skip('Please implement Part 1')
+    it 'Part 1: 4' do
+      expect(awk[0]).to eq(4)
     end
 
-    it 'Part 2: INSERT_EXPECTATION_PART_2' do
-      skip('Please implement Part 2')
+    it 'Part 2: 32' do
+      expect(awk[1]).to eq(32)
     end
   end
 end
