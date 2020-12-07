@@ -8,11 +8,6 @@ class Setup < Thor
   option :f, type: :boolean, banner: 'Override existing files.'
 
   def day(num) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
-    unless num.is_a?(Integer)
-      puts 'Error: NUMBER_OF_DAY must be an Integer.'
-      return
-    end
-
     puts "Setting up new puzzle for Advent of Code Day: #{num}."
 
     lib_path = "lib/day#{num}"
@@ -60,12 +55,12 @@ class Setup < Thor
       f.puts
       f.puts "RSpec.describe Day#{num} do"
       f.puts "  context 'when Ruby' do"
-      f.puts "    it 'Part 1: INSERT_EXPECTATION_HERE' do"
-      f.puts "      skip('Please implement me')"
+      f.puts "    it 'Part 1: INSERT_EXPECTATION_PART_1' do"
+      f.puts "      skip('Please implement Part 1')"
       f.puts '    end'
       f.puts
-      f.puts "    it 'Part 2: INSERT_EXPECTATION_HERE' do"
-      f.puts "      skip('Please implement me')"
+      f.puts "    it 'Part 2: INSERT_EXPECTATION_PART_2' do"
+      f.puts "      skip('Please implement Part 2')"
       f.puts '    end'
       f.puts '  end'
       f.puts
@@ -75,12 +70,12 @@ class Setup < Thor
       f.puts "    let(:awk) { `gawk -f \#{path}/day#{num}.awk \#{described_class::FILE}`.strip.split(/" + '\n/).map(&:to_i) }'
       # rubocop:enable Style/StringConcatenation, Layout/LineLength
       f.puts ''
-      f.puts "    it 'Part 1: INSERT_EXPECTATION_HERE' do"
-      f.puts "      skip('Please implement me')"
+      f.puts "    it 'Part 1: INSERT_EXPECTATION_PART_1' do"
+      f.puts "      skip('Please implement Part 1')"
       f.puts '    end'
       f.puts
-      f.puts "    it 'Part 2: INSERT_EXPECTATION_HERE' do"
-      f.puts "      skip('Please implement me')"
+      f.puts "    it 'Part 2: INSERT_EXPECTATION_PART_2' do"
+      f.puts "      skip('Please implement Part 2')"
       f.puts '    end'
       f.puts '  end'
       f.puts 'end'
