@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'awesome_print'
-
 class Day7
   FILE = 'lib/day7/test_input'
   COLOR = 'shiny gold'
