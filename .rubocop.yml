@@ -9,5 +9,9 @@ AllCops:
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context']
 
+RSpec/MultipleDescribes:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
+
