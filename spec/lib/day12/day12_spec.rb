@@ -5,11 +5,11 @@ require_relative '../../../lib/day12/day12_m'
 
 RSpec.describe Day12F do
   context 'when Ruby' do
-    it 'Part 1: INSERT_EXPECTATION_PART_1' do
+    it 'Part 1: 25' do
       expect(described_class.part1).to eq(25)
     end
 
-    it 'Part 2: INSERT_EXPECTATION_PART_2' do
+    it 'Part 2: 286' do
       expect(described_class.part2).to eq(286)
     end
   end
@@ -21,7 +21,7 @@ RSpec.describe Day12M do
       expect(described_class.part1).to eq(25)
     end
 
-    it 'Part 2: INSERT_EXPECTATION_PART_2' do
+    it 'Part 2: 286' do
       skip('Please implement Part 2')
     end
   end
