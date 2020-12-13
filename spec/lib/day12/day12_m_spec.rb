@@ -9,7 +9,7 @@ RSpec.describe Day12M do
     end
 
     it 'Part 2: 286' do
-      skip('Please implement Part 2')
+      expect(described_class.part2).to eq(286)
     end
   end
 end
