@@ -22,48 +22,55 @@ class Setup < Thor
 
     FileUtils.mkdir_p(lib_path)
     FileUtils.mkdir_p(spec_path)
-
-    File.open("#{lib_path}/day#{num}.rb", 'w') do |f|
-      f.puts '# frozen_string_literal: true'
-      f.puts
-      f.puts "class Day#{num}"
-      f.puts "  FILE = '#{lib_path}/test_input'"
-      f.puts
-      f.puts '  class << self'
-      f.puts '    def part1(file: FILE)'
-      f.puts '    end'
-      f.puts
-      f.puts '    def part2(file: FILE)'
-      f.puts '    end'
-      f.puts
-      f.puts '    private'
-      f.puts
-      f.puts '    def lines(file)'
-      f.puts '      File.read(file).lines.map(&:strip)'
-      f.puts '    end'
-      f.puts '  end'
-      f.puts 'end'
-    end
-
     File.new("#{lib_path}/test_input", 'w')
     File.new("#{lib_path}/README.md", 'w')
 
-    File.open("#{spec_path}/day#{num}_spec.rb", 'w') do |f| # rubocop:disable Metrics/BlockLength
+    %w[m f].each do |dude|
+      File.open("#{lib_path}/day#{num}_#{dude}.rb", 'w') do |f|
+        f.puts '# frozen_string_literal: true'
+        f.puts
+        f.puts "class Day#{num}"
+        f.puts "  FILE = '#{lib_path}/test_input'"
+        f.puts
+        f.puts '  class << self'
+        f.puts '    def part1(file: FILE)'
+        f.puts '    end'
+        f.puts
+        f.puts '    def part2(file: FILE)'
+        f.puts '    end'
+        f.puts
+        f.puts '    private'
+        f.puts
+        f.puts '    def lines(file)'
+        f.puts '      File.read(file).lines.map(&:strip)'
+        f.puts '    end'
+        f.puts '  end'
+        f.puts 'end'
+      end
+
+      File.open("#{spec_path}/day#{num}_#{dude}_spec.rb", 'w') do |f| # rubocop:disable Metrics/BlockLength
+        f.puts '# frozen_string_literal: true'
+        f.puts
+        f.puts "require_relative '../../../lib/day#{num}/day#{num}_#{dude}'"
+        f.puts
+        f.puts "RSpec.describe Day#{num}#{dude.capitalize} do"
+        f.puts "  context 'when Ruby' do"
+        f.puts "    it 'Part 1: INSERT_EXPECTATION_PART_1' do"
+        f.puts "      skip('Please implement Part 1')"
+        f.puts '    end'
+        f.puts
+        f.puts "    it 'Part 2: INSERT_EXPECTATION_PART_2' do"
+        f.puts "      skip('Please implement Part 2')"
+        f.puts '    end'
+        f.puts '  end'
+        f.puts 'end'
+      end
+    end
+
+    File.open("#{spec_path}/day#{num}_awk_spec.rb", 'w') do |f| # rubocop:disable Metrics/BlockLength
       f.puts '# frozen_string_literal: true'
       f.puts
-      f.puts "require_relative '../../../lib/day#{num}/day#{num}'"
-      f.puts
-      f.puts "RSpec.describe Day#{num} do"
-      f.puts "  context 'when Ruby' do"
-      f.puts "    it 'Part 1: INSERT_EXPECTATION_PART_1' do"
-      f.puts "      skip('Please implement Part 1')"
-      f.puts '    end'
-      f.puts
-      f.puts "    it 'Part 2: INSERT_EXPECTATION_PART_2' do"
-      f.puts "      skip('Please implement Part 2')"
-      f.puts '    end'
-      f.puts '  end'
-      f.puts
+      f.puts "RSpec.describe 'Day#{num}' do"
       f.puts "  context 'when AWK' do"
       f.puts "    let(:path) { 'lib/day#{num}' }"
       # rubocop:disable Style/StringConcatenation, Layout/LineLength
