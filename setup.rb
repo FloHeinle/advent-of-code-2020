@@ -29,7 +29,7 @@ class Setup < Thor
       File.open("#{lib_path}/day#{num}_#{dude}.rb", 'w') do |f|
         f.puts '# frozen_string_literal: true'
         f.puts
-        f.puts "class Day#{num}"
+        f.puts "class Day#{num}#{dude.capitalize}"
         f.puts "  FILE = '#{lib_path}/test_input'"
         f.puts
         f.puts '  class << self'
