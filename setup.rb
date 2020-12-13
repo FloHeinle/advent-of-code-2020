@@ -25,7 +25,7 @@ class Setup < Thor
     File.new("#{lib_path}/test_input", 'w')
     File.new("#{lib_path}/README.md", 'w')
 
-    %w[m f].each do |dude|
+    %w[m f].each do |dude| # rubocop:disable Metrics/BlockLength
       File.open("#{lib_path}/day#{num}_#{dude}.rb", 'w') do |f|
         f.puts '# frozen_string_literal: true'
         f.puts
@@ -48,7 +48,7 @@ class Setup < Thor
         f.puts 'end'
       end
 
-      File.open("#{spec_path}/day#{num}_#{dude}_spec.rb", 'w') do |f| # rubocop:disable Metrics/BlockLength
+      File.open("#{spec_path}/day#{num}_#{dude}_spec.rb", 'w') do |f|
         f.puts '# frozen_string_literal: true'
         f.puts
         f.puts "require_relative '../../../lib/day#{num}/day#{num}_#{dude}'"
@@ -67,7 +67,7 @@ class Setup < Thor
       end
     end
 
-    File.open("#{spec_path}/day#{num}_awk_spec.rb", 'w') do |f| # rubocop:disable Metrics/BlockLength
+    File.open("#{spec_path}/day#{num}_awk_spec.rb", 'w') do |f|
       f.puts '# frozen_string_literal: true'
       f.puts
       f.puts "RSpec.describe 'Day#{num}' do"
