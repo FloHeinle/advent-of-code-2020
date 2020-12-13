@@ -4,11 +4,9 @@ class Day13M
   FILE = 'lib/day13/test_input'
 
   class << self
-    def part1(file: FILE)
-    end
+    def part1(file: FILE); end
 
-    def part2(file: FILE)
-    end
+    def part2(file: FILE); end
 
     private
 
